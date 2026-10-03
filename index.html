@@ -8,7 +8,177 @@
     content="다낭 항공권 검색 및 예약을 위한 랜딩 페이지"
   />
   <title>다낭 항공권 특가 | Danang Fly</title>
+/* Trust badges near the booking form */
+.security-notice {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 16px;
+  padding: 12px 15px;
+  border: 1px solid #bbf7d0;
+  border-radius: 10px;
+  background: #f0fdf4;
+  color: #166534;
+  font-size: 13px;
+  font-weight: 700;
+}
 
+.security-notice svg,
+.trust-badge svg,
+.guarantee-badge svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.trust-badges {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 18px 0 0;
+  padding: 17px;
+  border-radius: 12px;
+  background: #f7fbff;
+}
+
+.trust-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 13px;
+  border: 1px solid #d8e6f5;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #334155;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.guarantee-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 14px 0 0;
+  padding: 9px 14px;
+  border: 1px solid #fed7aa;
+  border-radius: 999px;
+  background: #fff7ed;
+  color: #c2410c;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.social-proof-counter {
+  margin: 16px 0 0;
+  color: var(--muted);
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* Customer reviews */
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.testimonial-card {
+  padding: 22px;
+  border: 1px solid #e5edf6;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 6px 18px rgba(13, 65, 120, 0.06);
+}
+
+.testimonial-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.testimonial-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.testimonial-name {
+  color: var(--ink);
+  font-size: 16px;
+  font-weight: 900;
+}
+
+.testimonial-meta {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.testimonial-stars {
+  margin: 8px 0;
+  color: #fbbf24;
+  font-size: 16px;
+}
+
+.testimonial-text {
+  margin: 0;
+  color: #475569;
+  font-size: 14px;
+}
+
+/* Payment and partner section */
+.partner-section {
+  background: #ffffff;
+}
+
+.partner-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+}
+
+.partner-logo {
+  width: auto;
+  max-width: 115px;
+  height: 34px;
+  object-fit: contain;
+  filter: grayscale(1);
+  opacity: 0.7;
+  transition: 0.2s;
+}
+
+.partner-logo:hover {
+  filter: grayscale(0);
+  opacity: 1;
+}
+
+footer p {
+  margin: 8px 0;
+}
+
+footer a {
+  margin: 0 8px;
+  color: #cbd7e7;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+@media (max-width: 980px) {
+  .testimonial-grid {
+    grid-template-columns: 1fr;
+  }
+}
   <style>
     :root {
       --blue: #0757b9;
@@ -745,6 +915,49 @@
         <p class="booking-note">
           🔒 검색은 무료입니다. 실제 예약과 결제 기능은 항공권 API 또는 예약 시스템을 연동해야 합니다.
         </p>
+        <div class="security-notice">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+  </svg>
+  <span>보안 연결(SSL)을 통해 입력 정보가 암호화됩니다</span>
+</div>
+
+<div class="trust-badges">
+  <div class="trust-badge">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <rect x="3" y="11" width="18" height="11" rx="2"></rect>
+      <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+    </svg>
+    <span>안전한 결제</span>
+  </div>
+
+  <div class="trust-badge">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+      <polyline points="22 4 12 14.01 9 11.01"></polyline>
+    </svg>
+    <span>검증된 예약 정보</span>
+  </div>
+
+  <div class="trust-badge">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <circle cx="12" cy="12" r="10"></circle>
+      <path d="M12 6v6l4 2"></path>
+    </svg>
+    <span>고객 지원 안내</span>
+  </div>
+</div>
+
+<div class="guarantee-badge">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+  </svg>
+  <span>운임과 변경·환불 조건을 예약 전 확인하세요</span>
+</div>
+
+<p class="social-proof-counter">
+  🎫 다낭 항공권을 찾는 여행객을 위한 안전한 검색 서비스입니다
+</p>
       </div>
 
       <div class="result-card" id="resultCard" aria-live="polite">
@@ -779,7 +992,80 @@
         </p>
       </div>
     </div>
+<section id="reviews">
+  <div class="container">
+    <h2 class="section-title">고객 후기</h2>
 
+    <p class="section-desc">
+      실제 운영 시에는 예약을 완료한 고객의 동의를 받은 후기만 게시하세요.
+    </p>
+
+    <div class="testimonial-grid">
+      <article class="testimonial-card">
+        <div class="testimonial-header">
+          <img
+            class="testimonial-avatar"
+            src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=150&q=80"
+            alt="고객 프로필 예시"
+          />
+
+          <div>
+            <div class="testimonial-name">고객 후기 예시</div>
+            <div class="testimonial-meta">예약 완료 고객 · 예시 콘텐츠</div>
+          </div>
+        </div>
+
+        <div class="testimonial-stars">★★★★★</div>
+
+        <p class="testimonial-text">
+          “실제 서비스에서는 이 공간을 검증된 고객 후기와 정확한 예약 경험으로 교체해 주세요.”
+        </p>
+      </article>
+
+      <article class="testimonial-card">
+        <div class="testimonial-header">
+          <img
+            class="testimonial-avatar"
+            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80"
+            alt="고객 프로필 예시"
+          />
+
+          <div>
+            <div class="testimonial-name">고객 후기 예시</div>
+            <div class="testimonial-meta">예약 완료 고객 · 예시 콘텐츠</div>
+          </div>
+        </div>
+
+        <div class="testimonial-stars">★★★★★</div>
+
+        <p class="testimonial-text">
+          “운임, 세금, 변경 및 취소 조건을 정확하게 보여주는 것이 신뢰의 시작입니다.”
+        </p>
+      </article>
+
+      <article class="testimonial-card">
+        <div class="testimonial-header">
+          <img
+            class="testimonial-avatar"
+            src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=150&q=80"
+            alt="고객 프로필 예시"
+          />
+
+          <div>
+            <div class="testimonial-name">고객 후기 예시</div>
+            <div class="testimonial-meta">예약 완료 고객 · 예시 콘텐츠</div>
+          </div>
+        </div>
+
+        <div class="testimonial-stars">★★★★★</div>
+
+        <p class="testimonial-text">
+          “가짜 후기나 숫자 대신 실제 고객 지원과 공식 정책을 제공해야 합니다.”
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
     <section id="flights">
       <div class="container">
         <h2 class="section-title">인기 다낭 항공편</h2>
@@ -959,7 +1245,35 @@
         </div>
       </div>
     </section>
+<section class="partner-section">
+  <div class="container">
+    <h2 class="section-title">결제 및 제휴 안내</h2>
 
+    <p class="section-desc">
+      아래 로고는 디자인 예시입니다. 실제로 지원하거나 계약한 결제수단과 제휴사의 로고만 사용하세요.
+    </p>
+
+    <div class="partner-logos">
+      <img
+        class="partner-logo"
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Visa_Inc._logo.svg/2560px-Visa_Inc._logo.svg.png"
+        alt="Visa 로고 예시"
+      />
+
+      <img
+        class="partner-logo"
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/2560px-Mastercard-logo.svg.png"
+        alt="Mastercard 로고 예시"
+      />
+
+      <img
+        class="partner-logo"
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/PayPal.svg/2560px-PayPal.svg.png"
+        alt="PayPal 로고 예시"
+      />
+    </div>
+  </div>
+</section>
     <section class="cta-section">
       <div class="container">
         <h2>다낭 항공권을 지금 검색하세요</h2>
@@ -974,10 +1288,26 @@
   </main>
 
   <footer>
-    <div class="container">
-      © 2026 Danang Fly · 데모 랜딩 페이지 · 실제 운영 전 약관, 개인정보처리방침 및 예약 시스템을 연결하세요.
-    </div>
-  </footer>
+  <div class="container">
+    <p>
+      <strong>고객 지원:</strong>
+      실제 운영 시 사업자명, 공식 이메일, 전화번호 및 운영 시간을 입력하세요.
+    </p>
+
+    <p>
+      <a href="#">이용약관</a>
+      ·
+      <a href="#">개인정보처리방침</a>
+      ·
+      <a href="#">취소 및 환불 정책</a>
+    </p>
+
+    <p>
+      © 2026 Danang Fly · 데모 랜딩 페이지 · 실제 예약 서비스 운영 전 법적 고지,
+      개인정보 보호 및 예약 시스템을 준비하세요.
+    </p>
+  </div>
+</footer>
 
   <div class="sticky-cta">
     <a class="button" href="#search">✈️ 다낭 항공권 검색</a>
